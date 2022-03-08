@@ -6,7 +6,7 @@ namespace Listings
 {
     class Item_01 //Usando o FileStream
     {
-        static void Main(string[] args)
+        static void XMain(string[] args)
         {
             FileStream fluxoSaida = new FileStream("ArquivoSaida.txt", FileMode.Create, FileAccess.Write);
             string mensagemSaida = "Olá, Alura!";
