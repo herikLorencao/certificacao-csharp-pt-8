@@ -8,7 +8,7 @@ namespace Listings
 {
     class Item_26 // XML elements
     {
-        static void XMain(string[] args)
+        static void Main(string[] args)
         {
             //TAREFA:
             //1. LER UMA STRING CONTENDO DOCUMENTO XML:
@@ -36,7 +36,29 @@ namespace Listings
                 "</Filme>" +
             "</Filmes>";
 
+            using (StringReader leitor = new StringReader(xml))
+            {
+                var leitorXml = new XmlTextReader(leitor);
+                while (leitorXml.Read())
+                {
+                    LerXml(leitorXml);
+                    if (leitorXml.HasAttributes)
+                    {
+                        while (leitorXml.MoveToNextAttribute())
+                        {
+                            LerXml(leitorXml);
+                        }
+                    }
+                }
+            }
+            
             Console.ReadKey();
+        }
+
+        private static void LerXml(XmlTextReader leitorXml)
+        {
+            Console.WriteLine("Tipo: {0}, Nome: {1}, Valor: {2}", leitorXml.NodeType.ToString(), leitorXml.Name,
+                leitorXml.Value);
         }
     }
 }

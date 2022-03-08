@@ -6,7 +6,7 @@ namespace Listings
 {
     class Item_28 //Web Service
     {
-        static async Task Main(string[] args)
+        static async Task XMain(string[] args)
         {
             //TAREFA:
             //1. ADICIONAR UMA REFERÊNCIA A UM SERVIÇO
