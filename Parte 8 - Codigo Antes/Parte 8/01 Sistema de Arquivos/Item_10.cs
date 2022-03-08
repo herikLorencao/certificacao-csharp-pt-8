@@ -15,6 +15,17 @@ namespace Listings
             //Exibir os atributos do diretório
             //Exibir último acesso
             //Apagar o diretório que foi criado
+
+            DirectoryInfo localDir = new DirectoryInfo("NovoDiretorio");
+            localDir.Create();
+            if (localDir.Exists)
+            {
+                Console.WriteLine("Diretório criado com sucesso");
+            }
+            Console.WriteLine("Atributos: {0}", localDir.Attributes);
+            Console.WriteLine("Último acesso: {0}", localDir.LastAccessTime);
+            localDir.Delete();
+            Console.WriteLine("Diretório removido com sucesso");
         }
     }
 }

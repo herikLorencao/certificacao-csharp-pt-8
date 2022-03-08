@@ -13,6 +13,17 @@ namespace Listings
             //Criar um novo diretório
             //Verificar se ele foi criado
             //Apagar o diretório que foi criado
+            const string diretorio = "NovoDiretorio";
+            Directory.CreateDirectory(diretorio);
+            if (Directory.Exists(diretorio))
+            {
+                Console.WriteLine("Diretório criado com sucesso");
+            }
+            Directory.Delete(diretorio);
+            if (!Directory.Exists(diretorio))
+            {
+                Console.WriteLine("Diretório removido com sucesso");
+            }
         }
     }
 }

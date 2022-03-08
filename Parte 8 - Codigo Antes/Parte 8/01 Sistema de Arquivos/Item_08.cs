@@ -7,7 +7,7 @@ namespace Listings
 {
     class Item_08 //Informações de arquivo
     {
-        static void Main(string[] args)
+        static void XMain(string[] args)
         {
             //TAREFA:
             //1. Gravar um texto em Arquivo.txt
@@ -32,12 +32,12 @@ namespace Listings
             Console.WriteLine("Tamanho: {0} bytes", info.Length);
             Console.WriteLine("Atributos: {0}", info.Attributes);
             
-            //Adicionar propriedade (ligando valor de modo binário)
+            //Adicionar propriedade (ligando valor de modo binário - bitwise)
             // info.Attributes = info.Attributes | FileAttributes.ReadOnly;
             info.Attributes |= FileAttributes.ReadOnly;
             Console.WriteLine("Atributos: {0}", info.Attributes);
             
-            // Remover propriedade (desligando valor de modo binário)
+            // Remover propriedade (desligando valor de modo binário - bitwise)
             // info.Attributes = info.Attributes & ~FileAttributes.ReadOnly;
             info.Attributes &= ~FileAttributes.ReadOnly;
             Console.WriteLine("Atributos: {0}", info.Attributes);
